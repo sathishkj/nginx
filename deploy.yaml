@@ -6,9 +6,6 @@ metadata:
     env: qa
 spec:
   replicas: 3
-  selector:
-    matchLabels:
-      env: qa
   template:
     spec:
       containers:
