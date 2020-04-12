@@ -12,4 +12,5 @@ spec:
         - name: nginx
           image: nginx
   selector:
-    - env: qa
+    matchLabels:
+      env: qa
