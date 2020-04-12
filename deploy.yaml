@@ -11,3 +11,5 @@ spec:
       containers:
         - name: nginx
           image: nginx
+  selector:
+    - env: qa
