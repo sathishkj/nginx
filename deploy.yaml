@@ -14,3 +14,19 @@ spec:
   selector:
     matchLabels:
       env: qa
+      
+--------
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxserv
+  labels:
+    env: qa
+spec:
+  type: NodePort
+  ports:
+    - name: port
+      port: 8080
+  selector:
+    env: qa
+   
