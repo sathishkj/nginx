@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: nginx
-  labels:
-    env: qa
 spec:
   replicas: 3
   template:
+    metadata:
+      name: nginx
+      labels:
+        env: qa
     spec:
       containers:
         - name: nginx
@@ -14,3 +14,18 @@ spec:
   selector:
     matchLabels:
       env: qa
+      ---------------
+      
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxserv
+  labels:
+    env: qa
+spec:
+  type: NodePort
+  ports:
+    - name: port
+      port: 8080
+  selector:
+    env: qa
