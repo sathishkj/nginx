@@ -8,6 +8,6 @@ spec:
   type: NodePort
   ports:
     - name: port
-      port: 8080
+      port: 80
   selector:
     env: qa
